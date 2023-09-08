@@ -133,7 +133,7 @@ function classPackage:preamble ()
 		output('\n')
 		output('/* function to release collected object via destructor */')
 		output('#ifdef __cplusplus\n')
-		for i,v in pairs(_collect) do
+		for i,v in ipairs(_collect) do
 		 output('\nstatic int '..v..' (lua_State* tolua_S)')
 			output('{')
 			output(' '..i..'* self = ('..i..'*) tolua_tousertype(tolua_S,1,0);')
